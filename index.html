@@ -177,10 +177,8 @@
 
     <section id="beranda">
         <div class="profile-container reveal">
-            <img src="images/foto-profil.png" 
-            style="width:200px; height:200px; border-radius:50%; object-fit:cover;">
+            <img src="images/foto-profil.png" alt="Muhammad Fauzia" class="profile-img">
         </div>
-    </section>
         
         <div class="hero-text">
             <h1 class="reveal">Muhammad Fauzia</h1>
@@ -348,7 +346,7 @@
         <div class="project-card">
             <div class="card-banner">
                 <span class="status-badge">RESEARCH</span>
-                <img src="images/foto1.png">
+                <img src="images/foto1.png" alt="">
             </div>
             <div class="card-content">
                 <h3>Wearable Health Node</h3>
@@ -520,3 +518,223 @@
         });
     </script>
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Fauzia | IoT Engineer</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+--primary:#00c6ff;
+--secondary:#0072ff;
+--dark:#060c12;
+--border:rgba(0,198,255,0.2);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Tahoma,sans-serif}
+body{background:var(--dark);color:#fff;overflow-x:hidden}
+section{padding:120px 10%;min-height:100vh}
+
+nav{
+position:fixed;top:0;width:100%;padding:20px 8%;
+display:flex;justify-content:space-between;
+background:rgba(6,12,18,.9);z-index:1000;
+border-bottom:1px solid var(--border)
+}
+nav a{color:#aaa;text-decoration:none;margin-left:25px}
+nav a:hover{color:var(--primary)}
+
+h2{text-align:center;margin-bottom:40px;font-size:2.3rem}
+
+.btn{
+padding:12px 25px;border-radius:30px;
+text-decoration:none;font-weight:bold;
+display:inline-block;transition:.3s
+}
+.btn-primary{
+background:linear-gradient(45deg,var(--primary),var(--secondary));
+color:#fff
+}
+.btn-outline{
+border:2px solid var(--primary);color:#fff
+}
+.btn:hover{transform:scale(1.05)}
+
+.dashboard{
+max-width:900px;margin:auto;
+background:#0b1118;padding:40px;
+border-radius:20px;border:1px solid var(--border)
+}
+.toggle{
+margin-top:20px;
+display:flex;justify-content:center;gap:20px;align-items:center
+}
+.toggle button{
+padding:10px 20px;border:none;
+border-radius:20px;background:var(--primary);
+cursor:pointer;font-weight:bold
+}
+.status{
+font-weight:bold
+}
+
+.timeline{
+max-width:700px;margin:auto;
+border-left:3px solid var(--primary);
+padding-left:30px
+}
+.timeline-item{
+margin-bottom:40px;position:relative
+}
+.timeline-item::before{
+content:"";position:absolute;
+left:-40px;top:5px;width:15px;height:15px;
+background:var(--primary);border-radius:50%
+}
+.timeline-item h4{color:var(--primary)}
+
+footer{
+text-align:center;padding:30px;
+border-top:1px solid var(--border);
+color:#666
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><strong>Selamat Datang di Zee.IoT</strong></div>
+<div>
+<a href="#simulasi">Simulasi</a>
+<a href="#timeline">Timeline</a>
+<a href="#kontak">Kontak</a>
+</div>
+</nav>
+
+<!-- TIMELINE -->
+<section id="timeline">
+<h2>Perjalanan Karier</h2>
+
+<div class="timeline">
+<div class="timeline-item">
+<h4>2023</h4>
+<p>Mulai mendalami Arduino & Embedded System.</p>
+</div>
+
+<div class="timeline-item">
+<h4>2024</h4>
+<p>Mengembangkan lebih dari 5 proyek IoT berbasis ESP32.</p>
+</div>
+
+<div class="timeline-item">
+<h4>2025</h4>
+<p>Riset Wearable Health Monitoring System.</p>
+</div>
+
+<div class="timeline-item">
+<h4>2026</h4>
+<p>Mahasiswa Teknologi Rekayasa Komputer IPB University.</p>
+</div>
+</div>
+</section>
+
+<section id="kontak">
+    <div class="contact-box reveal">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">
+            Mari Berkolaborasi
+        </h2>
+
+        <p style="color: #aaa; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Saya selalu antusias dengan tantangan baru di bidang Embedded System dan IoT. 
+            Hubungi saya untuk diskusi teknis atau tawaran kerja sama.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+            <a href="https://www.linkedin.com/in/muhammad-fauzia-5b123034b" 
+               target="_blank" 
+               class="btn btn-primary">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+
+            <a href="https://instagram.com/mfauziaaa_" 
+               target="_blank" 
+               class="btn btn-outline">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+
+            <a href="CV_Muhammad_Fauzia.pdf" 
+               download 
+               class="btn btn-primary">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+
+            <a href="https://wa.me/6282121764347" 
+               target="_blank" 
+               class="btn btn-outline">
+                <i class="fab fa-whatsapp"></i> Chat Me
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+
+<footer>
+© 2026 Muhammad Fauzia |engineering IoT 
+</footer>
+
+<script>
+/* CHART */
+const ctx=document.getElementById('iotChart');
+let labels=[];
+let data=[];
+let deviceOn=true;
+
+const chart=new Chart(ctx,{
+type:'line',
+data:{
+labels:labels,
+datasets:[{
+label:'Temperature (°C)',
+data:data,
+borderColor:'#00c6ff',
+tension:.3
+}]
+},
+options:{
+responsive:true,
+animation:false,
+scales:{
+y:{min:20,max:40}
+}
+}
+});
+
+setInterval(()=>{
+if(deviceOn){
+if(labels.length>15){labels.shift();data.shift();}
+labels.push('');
+data.push((Math.random()*10+25).toFixed(2));
+chart.update();
+}
+},2000);
+
+/* TOGGLE DEVICE */
+function toggleDevice(){
+deviceOn=!deviceOn;
+const status=document.getElementById('deviceStatus');
+status.textContent=deviceOn?'ON':'OFF';
+status.style.color=deviceOn?'#00ff88':'red';
+}
+</script>
+
+</body>
+</html>  
