@@ -234,82 +234,98 @@
         <style>
         /* ===== DASHBOARD UPDATE STYLE ===== */
         
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1000px;
-            margin-top: 50px;
-            padding: 10px;
-        }
+        .dashboard-container{
+    width:100%;
+    max-width:850px;
+    margin:50px auto;
+    text-align:center;
+}
+
         
-        .stat-card {
-            background: rgba(0, 198, 255, 0.04);
-            border: 1px solid rgba(0, 198, 255, 0.15);
-            border-radius: 16px;
-            padding: 30px 20px;
-            text-align: center;
-            transition: 0.3s ease;
-            backdrop-filter: blur(8px);
-        }
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
         
-        .stat-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0,198,255,0.2);
-        }
+.stat-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(0,198,255,0.2);
+    border-radius:15px;
+    padding:20px;
+    transition:0.3s;
+    backdrop-filter:blur(10px);
+}
         
-        .stat-label {
-            font-size: 0.75rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-        }
+.stat-card:hover{
+    transform:translateY(-5px);
+    border-color:#00c6ff;
+    box-shadow:0 10px 25px rgba(0,198,255,0.25);
+}
         
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-        }
+.stat-label{
+    font-size:0.75rem;
+    color:#aaa;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
         
-        .status-online {
-            color: var(--success);
-        }
+.stat-value{
+    font-size:1.6rem;
+    font-weight:bold;
+}
         
-        .highlight-value {
-            color: var(--primary);
-        }
-        
-        .node-value {
-            font-size: 1.4rem;
-            color: var(--primary);
-            font-family: 'Consolas', monospace;
-            letter-spacing: 1px;
-        }
-        
-        .status-led {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: var(--success);
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 10px var(--success);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-        }
-        </style>
+.status-online{
+    color:#00ff88;
+}
+
+.highlight-value{
+    color:#00c6ff;
+}
+
+.node-value{
+    font-size:1.2rem;
+    color:#00c6ff;
+    font-family:monospace;
+}
+
+/* ===== LED ===== */
+
+.status-led{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    background:#00ff88;
+    border-radius:50%;
+    margin-right:6px;
+    box-shadow:0 0 8px #00ff88;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:1}
+50%{opacity:.4}
+100%{opacity:1}
+}
+
+/* ===== RESPONSIVE HP ===== */
+
+@media(max-width:600px){
+
+.dashboard{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
 
 <section id="proyek">
 
     <h2 style="font-size: 2.5rem; margin-bottom: 10px; text-align:center;">
-        Dokumentasi Projek
+        Dokumentasi saya
     </h2>
 
     <p style="color: #666; margin-bottom: 40px; text-align:center;">
@@ -321,72 +337,88 @@
         <!-- PROJECT 1 -->
         <div class="project-card">
             <div class="card-banner">
-                <span class="status-badge">COMPLETED</span>
+                <span class="status-badge">Kelompok</span>
                 <img src="foto6.jpeg" alt="">
             </div>
             <div class="card-content">
-                <h3>Smart Agriculture IoT</h3>
-                <p>Monitoring tanah real-time berbasis ESP32 dan MQTT.</p>
+                <h3>Sinyal Dan Sistem Kontrol Elektronika</h3>
+                <p>Monitoring Projek berbasis IOT Menggunakan sensor 
+                    DHT22, LM324, arduino mega, lm741 .</p>
             </div>
         </div>
 
         <!-- PROJECT 2 -->
         <div class="project-card">
             <div class="card-banner">
-                <span class="status-badge">TESTING</span>
+                <span class="status-badge">Kelompok</span>
                 <img src="foto7.jpeg" alt="">
             </div>
             <div class="card-content">
-                <h3>Voice-Gate Automation</h3>
-                <p>Kontrol pagar otomatis terintegrasi Google Assistant.</p>
+                <h3>Teknologi Routing Dan Switching</h3>
+                <p>Perancangan Dan Implementasi Infrastruktur Jaringan 
+                    Perusahaan Yang Highly Available Dengan Arsitektur Redundansi.</p>
             </div>
         </div>
 
         <!-- PROJECT 3 -->
         <div class="project-card">
             <div class="card-banner">
-                <span class="status-badge">RESEARCH</span>
-                <img src="foto1.png" alt="">
+                <span class="status-badge">Individu</span>
+                <img src="foto13.jpeg" alt="">
             </div>
             <div class="card-content">
-                <h3>Bengkel IoT</h3>
-                <p>Monitoring bengkel IOT untuk membuat projek IOT  .</p>
+                <h3>Projek Pembuatan Poster Iklan</h3>
+                <p>Projek ini saya menggunakan aplikasi Blender, yang dimana kegunaan aplikasi 
+                   tersebut adalah untuk membuat desainer, animator dan pembuatan game. seperti animasi,
+                   menggerakan karakter atau objek 3 D, simulasi efek visual dan terakhir desain game yaitu
+                   membuat aset visual seperti, karakter, bangunan, dan juga lingkungan yang akan dimasukan  .</p>
             </div>
         </div>
 
         <!-- PROJECT 4 -->
         <div class="project-card">
             <div class="card-banner">
-                <span class="status-badge">COMPLETED</span>
+                <span class="status-badge">Individu</span>
                 <img src="foto3.jpeg" alt="">
             </div>
             <div class="card-content">
-                <h3>Smart Parking</h3>
-                <p>Deteksi slot parkir berbasis sensor ultrasonik.</p>
+                <h3>Bengkel IOT</h3>
+                <p>Terjun langsung ke lapangan untuk mencoba 
+                    alat bengkel iot menggunakan CUT OF yang berguna 
+                    untuk memotong besi Hollow, besi siku, Stainles Steel
+                    yang dimana berukuran 5-7cm dengan sudut 0, 15, 30, 45 derajat.</p>
             </div>
         </div>
 
         <!-- PROJECT 5 -->
         <div class="project-card">
             <div class="card-banner">
-                <span class="status-badge">DEPLOYED</span>
+                <span class="status-badge">Organisasi HIMAVO</span>
                 <img src="foto10.jpeg" alt="">
             </div>
             <div class="card-content">
-                <h3>Energy Monitoring</h3>
-                <p>Monitoring konsumsi listrik real-time.</p>
+                <h3>HIMAVO MICRO IT</h3>
+                <p>Dimana saya menjabat sebgai staff bagian divisi multimedia lalu lanjut
+                   periode 2 untuk mengajukan sebagai koordinasi biro atau bisa disebut BPH 
+                   biro. yang dimana tugas Saya sebagai kobir adalah memonitoring setiap biro baik itu
+                   biro humas, psdm, dm maupun ensip, untuk memantau kerja dan juga progres di setiap pelaksanaan 
+                   masing" proker biro tersebut.</p>
             </div>
         </div>
 
         <!-- PROJECT 6 -->
         <div class="project-card">
             <div class="card-banner">
-                <span class="status-badge">PROTOTYPE</span>
+                <span class="status-badge">Individu</span>
                 <img src="foto12.jpeg" alt="">
             </div>
             <div class="card-content">
-                <h3>Water Quality IoT</h3>
-                <p>Monitoring pH & TDS dengan notifikasi Telegram.</p>
+                <h3>Pengelasan bengkel IOT</h3>
+                <p>Setelah melakukan CUT Of, besi yang di potong sesuai dengan sudut yang di tentukan
+                   langkah selanjutnya adalah, Pengelasan atau bisa disebut penyambungan besi yang telah
+                   dipotong dengan ukuran sudut nya masing". Menggunakan alat las seperti inverter, kabel las, 
+                   klem massa, dan kawat las. Dan tidak lupa menggunakan alat pelingdung APD, seperti topeng/helm las,
+                   sarung tangan las, kaca mata las, sikat kawat, palu terak, dan terakhir sepatu yang tebal.</p>
             </div>
         </div>
 
