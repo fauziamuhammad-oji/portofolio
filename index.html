@@ -823,7 +823,67 @@ color:#666
     </div>
 </section>
 
+<!-- VISITOR DASHBOARD -->
+<section id="visitor-dashboard">
 
+    <h2 style="margin-bottom:40px;">Website Visitor Dashboard</h2>
+    
+    <div class="visitor-grid">
+    
+    <div class="visitor-card">
+    <h3>Total Pengunjung</h3>
+    <p id="visitorCount">0</p>
+    </div>
+    
+    <div class="visitor-card">
+    <h3>Currently Viewing</h3>
+    <p id="activeUsers">1</p>
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    <style>
+    
+    #visitor-dashboard{
+    padding:100px 10%;
+    text-align:center;
+    }
+    
+    .visitor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    max-width:700px;
+    margin:auto;
+    }
+    
+    .visitor-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(0,198,255,0.2);
+    border-radius:15px;
+    padding:30px;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+    }
+    
+    .visitor-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,198,255,0.25);
+    }
+    
+    .visitor-card h3{
+    margin-bottom:10px;
+    color:#00c6ff;
+    }
+    
+    .visitor-card p{
+    font-size:2rem;
+    font-weight:bold;
+    }
+    
+    </style>
 
 <footer>
 © 2026 Muhammad Fauzia |engineering IoT 
@@ -874,5 +934,36 @@ status.style.color=deviceOn?'#00ff88':'red';
 }
 </script>
 
+
+<script>
+
+    /* VISITOR COUNTER */
+    
+    let visitor = localStorage.getItem("siteVisitor");
+    
+    if(visitor === null){
+    visitor = 1;
+    }else{
+    visitor = parseInt(visitor) + 1;
+    }
+    
+    localStorage.setItem("siteVisitor", visitor);
+    
+    document.getElementById("visitorCount").textContent = visitor;
+    
+    
+    /* CURRENTLY VIEWING SIMULATION */
+    
+    function updateActiveUsers(){
+    
+    let users = Math.floor(Math.random()*5)+1;
+    
+    document.getElementById("activeUsers").textContent = users;
+    
+    }
+    
+    setInterval(updateActiveUsers,4000);
+    
+    </script>
 </body>
 </html>  
