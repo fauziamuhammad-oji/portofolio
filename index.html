@@ -395,7 +395,7 @@ grid-template-columns:1fr;
             <div class="card-content">
                 <h3>HIMAVO MICRO IT</h3>
                 <p>
-                    Dimana saya menjabat sebgai staff bagian divisi multimedia lalu lanjut periode 2 untuk mengajukan sebagai koordinasi biro atau bisa disebut BPH biro.
+                    Dimana saya menjabat sebagai staff bagian divisi multimedia lalu lanjut periode 2 untuk mengajukan sebagai koordinasi biro atau bisa disebut BPH biro.
                     yang dimana tugas Saya sebagai kobir adalah memonitoring setiap biro baik itu biro humas, psdm, dm maupun ensip, untuk memantau kerja dan juga progres di setiap pelaksanaan masing" proker biro tersebut.</p>
             </div>
         </div>
@@ -643,32 +643,144 @@ color:#666
 </div>
 </nav>
 
-<!-- TIMELINE -->
-<section id="timeline">
-<h2>Perjalanan Karier</h2>
+<!-- IOT LAB DASHBOARD -->
+<section id="iot-dashboard">
 
-<div class="timeline">
-<div class="timeline-item">
-<h4>2023</h4>
-<p>Mulai mendalami Arduino & Embedded System.</p>
-</div>
-
-<div class="timeline-item">
-<h4>2024</h4>
-<p>Mengembangkan lebih dari 5 proyek IoT berbasis ESP32.</p>
-</div>
-
-<div class="timeline-item">
-<h4>2025</h4>
-<p>Riset Wearable Health Monitoring System.</p>
-</div>
-
-<div class="timeline-item">
-<h4>2026</h4>
-<p>Mahasiswa Teknologi Rekayasa Komputer IPB University.</p>
-</div>
-</div>
-</section>
+    <h2 class="section-title">IoT Lab Dashboard</h2>
+    <p style="text-align:center; max-width:600px; margin:auto; color:#ccc;">
+    Simulasi monitoring sensor IoT secara real-time menggunakan dashboard web.
+    </p>
+    
+    <div class="iot-container">
+    
+    <div class="iot-card">
+    <h3>Temperature</h3>
+    <p id="tempValue">-- °C</p>
+    </div>
+    
+    <div class="iot-card">
+    <h3>Humidity</h3>
+    <p id="humValue">-- %</p>
+    </div>
+    
+    <div class="iot-card">
+    <h3>Device Status</h3>
+    <p id="deviceStatus" style="color:#00ff88;">ONLINE</p>
+    </div>
+    
+    </div>
+    
+    <div class="chart-container">
+    <canvas id="sensorChart"></canvas>
+    </div>
+    
+    </section>
+    
+    
+    <style>
+    
+    #iot-dashboard{
+    padding:120px 10%;
+    text-align:center;
+    }
+    
+    .iot-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:40px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    }
+    
+    .iot-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(0,198,255,0.2);
+    padding:25px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    }
+    
+    .iot-card h3{
+    margin-bottom:10px;
+    color:#00c6ff;
+    }
+    
+    .iot-card p{
+    font-size:1.8rem;
+    font-weight:bold;
+    }
+    
+    .chart-container{
+    margin-top:50px;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+    }
+    
+    </style>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    
+    const tempEl = document.getElementById("tempValue");
+    const humEl = document.getElementById("humValue");
+    
+    let labels = [];
+    let dataTemp = [];
+    
+    const ctx = document.getElementById('sensorChart');
+    
+    const chart = new Chart(ctx,{
+    type:'line',
+    data:{
+    labels:labels,
+    datasets:[{
+    label:'Temperature °C',
+    data:dataTemp,
+    borderColor:'#00c6ff',
+    tension:0.3
+    }]
+    },
+    options:{
+    responsive:true,
+    animation:false,
+    scales:{
+    y:{
+    min:20,
+    max:40
+    }
+    }
+    }
+    });
+    
+    
+    function updateSensor(){
+    
+    let temp = (Math.random()*10+25).toFixed(2);
+    let hum = (Math.random()*40+40).toFixed(2);
+    
+    tempEl.textContent = temp + " °C";
+    humEl.textContent = hum + " %";
+    
+    if(labels.length>15){
+    labels.shift();
+    dataTemp.shift();
+    }
+    
+    labels.push("");
+    dataTemp.push(temp);
+    
+    chart.update();
+    
+    }
+    
+    setInterval(updateSensor,2000);
+    
+    </script>
 
 <section id="kontak">
     <div class="contact-box reveal">
@@ -695,7 +807,7 @@ color:#666
                 <i class="fab fa-instagram"></i> Instagram
             </a>
 
-            <a href="CV_Muhammad_Fauzia.pdf" 
+            <a href="CV Muhammad Fauzia IPB University.pdf" 
                download 
                class="btn btn-primary">
                 <i class="fas fa-download"></i> Download CV
