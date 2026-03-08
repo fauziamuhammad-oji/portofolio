@@ -321,7 +321,7 @@ grid-template-columns:1fr;
 }
 
 </style>
-
+</section>
 <section id="proyek">
 
     <h2 style="font-size: 2.5rem; margin-bottom: 10px; text-align:center;">
@@ -421,6 +421,7 @@ grid-template-columns:1fr;
 </section>
 
 <style>
+    
 
 /* SECTION */
 #proyek {
@@ -544,12 +545,7 @@ grid-template-columns:1fr;
         });
     </script>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Fauzia | IoT Engineer</title>
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -890,49 +886,69 @@ color:#666
 </footer>
 
 <script>
-/* CHART */
-const ctx=document.getElementById('iotChart');
-let labels=[];
-let data=[];
-let deviceOn=true;
 
-const chart=new Chart(ctx,{
-type:'line',
-data:{
-labels:labels,
-datasets:[{
-label:'Temperature (°C)',
-data:data,
-borderColor:'#00c6ff',
-tension:.3
-}]
-},
-options:{
-responsive:true,
-animation:false,
-scales:{
-y:{min:20,max:40}
-}
-}
-});
-
-setInterval(()=>{
-if(deviceOn){
-if(labels.length>15){labels.shift();data.shift();}
-labels.push('');
-data.push((Math.random()*10+25).toFixed(2));
-chart.update();
-}
-},2000);
-
-/* TOGGLE DEVICE */
-function toggleDevice(){
-deviceOn=!deviceOn;
-const status=document.getElementById('deviceStatus');
-status.textContent=deviceOn?'ON':'OFF';
-status.style.color=deviceOn?'#00ff88':'red';
-}
-</script>
+    document.addEventListener("DOMContentLoaded", function(){
+    
+    /* CHART */
+    const ctx = document.getElementById("sensorChart");
+    
+    let labels = [];
+    let data = [];
+    let deviceOn = true;
+    
+    const chart = new Chart(ctx,{
+    type:'line',
+    data:{
+    labels:labels,
+    datasets:[{
+    label:'Temperature (°C)',
+    data:data,
+    borderColor:'#00c6ff',
+    tension:0.3
+    }]
+    },
+    options:{
+    responsive:true,
+    animation:false,
+    scales:{
+    y:{
+    min:20,
+    max:40
+    }
+    }
+    }
+    });
+    
+    setInterval(()=>{
+    if(deviceOn){
+    
+    if(labels.length > 15){
+    labels.shift();
+    data.shift();
+    }
+    
+    labels.push('');
+    data.push((Math.random()*10+25).toFixed(2));
+    
+    chart.update();
+    }
+    },2000);
+    
+    /* TOGGLE DEVICE */
+    window.toggleDevice = function(){
+    
+    deviceOn = !deviceOn;
+    
+    const status = document.getElementById("deviceStatus");
+    
+    status.textContent = deviceOn ? "ON" : "OFF";
+    status.style.color = deviceOn ? "#00ff88" : "red";
+    
+    }
+    
+    });
+    
+    </script>
 
 
 <script>
