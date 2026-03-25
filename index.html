@@ -178,7 +178,7 @@
 
     <section id="beranda">
         <div class="profile-container reveal">
-            <img src="foto11.jpeg" alt="Muhammad Fauzia" class="profile-img">
+            <img src="foto-profil11.png" alt="Muhammad Fauzia" class="profile-img">
         </div>
         
         <div class="hero-text">
@@ -317,6 +317,19 @@
 
 .dashboard{
 grid-template-columns:1fr;
+}
+
+
+#browser-alert {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background: #00c6ff; color: white;
+    z-index: 9999; padding: 15px;
+    text-align: center; font-size: 13px;
+}
+@media (max-width: 768px) {
+    #browser-alert { display: block; }
 }
 
 }
@@ -1080,5 +1093,11 @@ height:400px;
     setInterval(updateActiveUsers,4000);
     
     </script>
+
+<div id="browser-alert">
+    📱 Biar lancar, klik <b>titik tiga (⋮)</b> di pojok kanan atas & pilih <b>'Buka di Browser'</b>
+    <button onclick="this.parentElement.style.display='none'" style="margin-left:10px; border:none; background:white; padding:2px 8px; border-radius:4px;">Siap!</button>
+ </div>
+
 </body>
 </html>  
