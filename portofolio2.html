@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Muhammad Fauzia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* === CSS (Tampilan dan Gaya) === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigasi */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 32, 39, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: #00c6ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li { margin-left: 30px; }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav ul li a:hover { color: #00c6ff; }
+
+        section {
+            min-height: 100vh;
+            padding: 120px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Beranda / Hero */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00c6ff;
+            box-shadow: 0 0 25px rgba(0, 198, 255, 0.5);
+            margin-bottom: 25px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .typing-text {
+            color: #00c6ff;
+            font-weight: bold;
+            border-right: 2px solid #00c6ff;
+            padding-right: 5px;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink { 50% { border-color: transparent; } }
+
+        /* Tombol */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00c6ff;
+            box-shadow: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 198, 255, 0.5);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 198, 255, 0.1);
+        }
+
+        /* Bagian Keahlian / Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 198, 255, 0.4);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tag:hover {
+            background: #00c6ff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Judul Section */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #00c6ff;
+            bottom: -10px;
+            left: 25%;
+            border-radius: 5px;
+        }
+
+        /* Proyek */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #00c6ff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .card p { color: #bbb; font-size: 0.95rem; }
+
+        /* --- KONTAK SECTION (Desain Baru) --- */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            width: 100%;
+            max-width: 1100px;
+            justify-content: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .info-card:hover {
+            background: rgba(0, 198, 255, 0.1);
+            border-color: #00c6ff;
+            transform: translateX(10px);
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: #00c6ff;
+        }
+
+        .info-details h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .info-details p { color: #bbb; font-size: 0.9rem; }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: #aaa;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #00c6ff;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* --- Animasi Scroll Reveal --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; flex-direction: column; gap: 10px; }
+            nav ul li { margin: 0 10px; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .contact-wrapper { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Fauzia<span>.IoT</span></a>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section id="beranda" class="hero">
+        <img src="https://ui-avatars.com/api/?name=Muhammad+Fauzia&background=00c6ff&color=fff&size=200" alt="Foto Profil" class="profile-img">
+        
+        <h1 class="reveal">Halo, Saya <br><span style="color: #00c6ff;">Muhammad Fauzia</span></h1>
+        <h2 class="reveal">Mahasiswa IPB University | <span class="typing-text" id="typewriter"></span></h2>
+        <p class="reveal" style="max-width: 600px; color: #ccc;">Mahasiswa Teknologi Rekayasa Komputer yang antusias mempelajari bidang IoT (Internet of Things), Hardware, dan Mikrokontroler.</p>
+        
+        <div class="btn-group reveal">
+            <a href="#proyek" class="btn">Lihat Proyek <i class="fas fa-arrow-down"></i></a>
+            <a href="https://wa.me/6282121764347" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Hubungi Saya</a>
+        </div>
+    </section>
+
+    <section id="tentang">
+        <h2 class="section-title reveal">Tentang Saya</h2>
+        <div class="reveal" style="max-width: 800px; font-size: 1.1rem; color: #ddd; margin-bottom: 40px; line-height: 1.8;">
+            <p>Saya tertarik pada bagaimana perangkat lunak dan perangkat keras dapat berinteraksi untuk memecahkan masalah dunia nyata. Saat ini saya sedang mendalami ekosistem IoT, pengembangan <i>embedded system</i>, dan merangkai komponen elektronik menjadi alat yang pintar dan otomatis.</p>
+        </div>
+        
+        <h3 class="reveal" style="color: #fff; margin-bottom: 20px; font-weight: 500;">Teknologi & Keahlian</h3>
+        <div class="skills-container reveal">
+            <div class="skill-tag"><i class="fas fa-microchip"></i> Mikrokontroler / Arduino</div>
+            <div class="skill-tag"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</div>
+            <div class="skill-tag"><i class="fab fa-cuttlefish"></i> C / C++</div>
+            <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-tag"><i class="fas fa-network-wired"></i> Sensor & Aktuator</div>
+            <div class="skill-tag"><i class="fas fa-wifi"></i> NodeMCU / ESP32</div>
+        </div>
+    </section>
+
+    <section id="proyek" class="portfolio">
+        <h2 class="section-title reveal">Proyek IoT & Hardware</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <i class="fas fa-home"></i>
+                <h3>Smart Home Automation</h3>
+                <p>Membangun purwarupa rumah pintar menggunakan ESP32 yang dapat mengontrol lampu dan suhu ruangan dari jarak jauh melalui smartphone.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-temperature-high"></i>
+                <h3>IoT Weather Station</h3>
+                <p>Sistem pemantau cuaca mini yang membaca kelembapan dan suhu udara, kemudian mengirimkan datanya ke dashboard web secara real-time.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-robot"></i>
+                <h3>Line Follower Robot</h3>
+                <p>Merakit dan memprogram robot berbasis sensor inframerah yang dapat mendeteksi dan mengikuti garis lintasan secara otomatis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="contact">
+        <h2 class="section-title reveal">Mari Terhubung</h2>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info reveal">
+                <a href="https://wa.me/6282121764347" target="_blank" class="info-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="info-details">
+                        <h4>WhatsApp</h4>
+                        <p>0821-2176-4347</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.instagram.com/mfauziaaa_?igsh=Nnh4bGcwcTh4eHo4" target="_blank" class="info-card">
+                    <i class="fab fa-instagram"></i>
+                    <div class="info-details">
+                        <h4>Instagram</h4>
+                        <p>@mfauziaaa_</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/muhammad-fauzia-5b123034b" target="_blank" class="info-card">
+                    <i class="fab fa-linkedin"></i>
+                    <div class="info-details">
+                        <h4>LinkedIn</h4>
+                        <p>Muhammad Fauzia</p>
+                    </div>
+                </a>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm">
+                <h3 style="margin-bottom: 20px; font-weight: 500;">Tinggalkan Pesan</h3>
+                <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                <input type="email" id="email" placeholder="Alamat Email" required>
+                <textarea id="pesan" rows="5" placeholder="Ada ide proyek IoT atau tawaran kerja sama? Tulis di sini..." required></textarea>
+                <button type="submit" class="btn" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Fauzia | Mahasiswa Teknologi Rekayasa Komputer IPB. Dibuat dengan 💻.</p>
+    </footer>
+
+    <script>
+        // 1. Efek Mengetik (Typing Effect)
+        const words = ["IoT Enthusiast.", "Hardware Developer.", "Tech Explorer."];
+        let i = 0;
+        let isDeleting = false;
+        let textIndex = 0;
+
+        function typeWriter() {
+            const currentWord = words[i];
+            const typewriterElement = document.getElementById("typewriter");
+
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, textIndex - 1);
+                textIndex--;
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, textIndex + 1);
+                textIndex++;
+            }
+
+            let speed = isDeleting ? 40 : 100;
+
+            if (!isDeleting && textIndex === currentWord.length) {
+                speed = 2500; // Berhenti sebentar setelah kalimat selesai
+                isDeleting = true;
+            } else if (isDeleting && textIndex === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+                speed = 500;
+            }
+            setTimeout(typeWriter, speed);
+        }
+
+        // 2. Efek Scroll Reveal (Elemen Muncul Halus Saat Di-scroll)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 80; 
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(typeWriter, 800);
+            reveal(); 
+        });
+
+        // 3. Form Submit Alert
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const nama = document.getElementById("nama").value;
+            alert(`Terima kasih ${nama}! Karena ini portofolio statis, jika Anda ingin merespons cepat silakan klik tombol WhatsApp atau Instagram saya. 🚀`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
