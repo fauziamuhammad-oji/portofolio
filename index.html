@@ -11,9 +11,9 @@
             --primary: #00c6ff;
             --secondary: #0072ff;
             --success: #00ff88;
-            --dark: #060c12;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(0, 198, 255, 0.2);
+            --dark: #086bcf;
+            --glass: rgba(206, 10, 144, 0.76);
+            --border: rgba(0, 200, 255, 0.71);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
@@ -51,7 +51,7 @@
         .profile-img {
             width: 160px; height: 160px; border-radius: 50%;
             border: 4px solid var(--primary); object-fit: cover;
-            box-shadow: 0 0 30px rgba(0, 198, 255, 0.4);
+            box-shadow: 0 0 30px rgba(74, 98, 219, 0.595);
             animation: float 4s ease-in-out infinite;
         }
 
@@ -61,6 +61,7 @@
         .hero-text h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: -1px; }
         .typing-container { font-size: 1.5rem; color: #ccc; margin-bottom: 30px; height: 1.6em; }
         .typing-text { color: var(--primary); font-weight: bold; border-right: 3px solid; }
+        
 
         /* IoT Dashboard Live */
         .dashboard {
@@ -77,7 +78,7 @@
             border: 1px solid rgba(0, 198, 255, 0.1); position: relative; transition: 0.4s;
         }
 
-        .stat-card:hover { background: rgba(0, 198, 255, 0.08); }
+        .stat-card:hover { background: rgba(1, 4, 7, 0.044); }
         .stat-card::before {
             content: ''; position: absolute; top: 10px; left: 10px; width: 12px; height: 12px;
             border-top: 2px solid var(--primary); border-left: 2px solid var(--primary);
@@ -211,7 +212,7 @@
                         <i class="fas fa-bolt"></i> Uptime
                     </p>
                     <div class="stat-value highlight-value">
-                        99.9%
+                        90%
                     </div>
                 </div>
         
@@ -250,8 +251,8 @@
 
         
 .stat-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(0,198,255,0.2);
+    background:rgba(9, 0, 9, 0.081);
+    border:1px solid rgba(0, 200, 255, 0.816);
     border-radius:15px;
     padding:20px;
     transition:0.3s;
@@ -261,12 +262,12 @@
 .stat-card:hover{
     transform:translateY(-5px);
     border-color:#00c6ff;
-    box-shadow:0 10px 25px rgba(0,198,255,0.25);
+    box-shadow:0 10px 25px rgba(255, 0, 208, 0.633);
 }
         
 .stat-label{
     font-size:0.75rem;
-    color:#aaa;
+    color:#aaaaaa;
     letter-spacing:1px;
     margin-bottom:10px;
 }
@@ -418,9 +419,13 @@ grid-template-columns:1fr;
 
     </div>
 
+
+
+    
 </section>
 
 <style>
+    
     
 
 /* SECTION */
@@ -689,6 +694,8 @@ color:#666
     margin-left:auto;
     margin-right:auto;
     }
+
+    
     
     .iot-card{
     background:rgba(255,255,255,0.05);
@@ -803,11 +810,49 @@ color:#666
                 <i class="fab fa-instagram"></i> Instagram
             </a>
 
-            <a href="CV Muhammad Fauzia IPB University.pdf" 
-               download 
-               class="btn btn-primary">
-                <i class="fas fa-download"></i> Download CV
-            </a>
+           <!-- CV SECTION -->
+<section id="cv">
+
+    <h2 class="cv-title">Curriculum Vitae</h2>
+    <p class="cv-subtitle">
+    Lihat dan unduh CV profesional saya sebagai IoT & Hardware Engineer.
+    </p>
+    
+    <div class="cv-container">
+    
+        <!-- LEFT INFO -->
+        <div class="cv-info">
+            <h3>Muhammad Fauzia</h3>
+            <p class="cv-role">IoT & Hardware Engineer</p>
+    
+            <ul class="cv-list">
+                <li><i class="fas fa-microchip"></i> Embedded System & IoT</li>
+                <li><i class="fas fa-network-wired"></i> Networking & Infrastructure</li>
+                <li><i class="fas fa-code"></i> Programming & Automation</li>
+                <li><i class="fas fa-university"></i> IPB University</li>
+            </ul>
+    
+            <div class="cv-buttons">
+                <a href="CV Muhammad Fauzia IPB University.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-eye"></i> Lihat CV
+                </a>
+    
+                <a href="CV Muhammad Fauzia IPB University.pdf" download class="btn btn-outline">
+                    <i class="fas fa-download"></i> Download
+                </a>
+            </div>
+        </div>
+    
+        <!-- RIGHT PREVIEW -->
+        <div class="cv-preview">
+            <iframe src="CV Muhammad Fauzia IPB University.pdf"></iframe>
+        </div>
+    
+    </div>
+    
+    </section>
+    
+   
 
             <a href="https://wa.me/6282121764347" 
                target="_blank" 
@@ -842,45 +887,99 @@ color:#666
     
     <style>
     
-    #visitor-dashboard{
-    padding:100px 10%;
-    text-align:center;
-    }
-    
-    .visitor-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    max-width:700px;
-    margin:auto;
-    }
-    
-    .visitor-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(0,198,255,0.2);
-    border-radius:15px;
-    padding:30px;
-    backdrop-filter:blur(10px);
-    transition:0.3s;
-    }
-    
-    .visitor-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,198,255,0.25);
-    }
-    
-    .visitor-card h3{
-    margin-bottom:10px;
-    color:#00c6ff;
-    }
-    
-    .visitor-card p{
-    font-size:2rem;
-    font-weight:bold;
-    }
-    
-    </style>
+ /* ===== CV SECTION ===== */
 
+#cv{
+padding:120px 10%;
+text-align:center;
+}
+
+.cv-title{
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.cv-subtitle{
+color:#aaa;
+margin-bottom:50px;
+}
+
+.cv-container{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:40px;
+align-items:center;
+max-width:1100px;
+margin:auto;
+}
+
+/* LEFT SIDE */
+.cv-info{
+text-align:left;
+background:rgba(255,255,255,0.03);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(0,198,255,0.2);
+backdrop-filter:blur(10px);
+}
+
+.cv-info h3{
+font-size:1.8rem;
+margin-bottom:10px;
+}
+
+.cv-role{
+color:#00c6ff;
+margin-bottom:20px;
+}
+
+.cv-list{
+list-style:none;
+margin-bottom:30px;
+}
+
+.cv-list li{
+margin-bottom:10px;
+color:#ccc;
+}
+
+.cv-list i{
+color:#00c6ff;
+margin-right:10px;
+}
+
+/* BUTTON */
+.cv-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+/* RIGHT SIDE */
+.cv-preview{
+height:500px;
+border-radius:20px;
+overflow:hidden;
+border:1px solid rgba(0,198,255,0.2);
+}
+
+.cv-preview iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.cv-container{
+grid-template-columns:1fr;
+}
+.cv-preview{
+height:400px;
+}
+}
+
+</style>
 <footer>
 © 2026 Muhammad Fauzia |engineering IoT 
 </footer>
